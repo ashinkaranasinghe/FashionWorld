@@ -1,37 +1,46 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View, Button } from "react-native";
+import { StyleSheet, View, Button } from "react-native";
 
-const instructions = "tharindu dilshan";
+const instructions = "Ashinka shani";
 
 export default class App extends Component {
-  onButtonPress = () => {
+  onPresentLearnMore = () => {
     alert("Button pressed!");
   };
   render() {
     return (
-      <View>
-        <Button
-          style={styles.c}
-          onPress={this.onButtonPress}
-          title="Learn More"
-          color="#841584"
+      <View style={{ flex: 1 }}>
+        <View style={{ width: 50, height: 50, backgroundColor: "powderblue" }}>
+          <Button
+            onPress={this.onPresentLearnMore}
+            title="Learn More"
+            color="#841584"
+          />
+        </View>
+        <View
+          style={{
+            flex: 2,
+            width: 100,
+            height: 100,
+            backgroundColor: "skyblue"
+          }}
+        />
+        <View
+          style={{
+            flex: 3,
+            width: 150,
+            height: 150,
+            backgroundColor: "steelblue"
+          }}
         />
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  c: {},
+const a = "rhshd";
 
+const styles = StyleSheet.create({
   welcome: {
     fontSize: 20,
     textAlign: "center",
@@ -43,8 +52,9 @@ const styles = StyleSheet.create({
     marginBottom: 5
   },
   button: {
-    marginLeft: 10,
-    marginTop: 10,
-    width: 100
+    marginLeft: 150,
+    marginTop: 150,
+    width: 100,
+    Text_color: "#143333"
   }
 });
