@@ -1,47 +1,61 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Button } from "react-native";
-import { SSL_OP_NO_TLSv1_2 } from "constants";
-
-const instructions = "Ashinka shani";
+import {
+  StyleSheet,
+  View,
+  Button,
+  Text,
+  ScrollView,
+  ImageBackground
+} from "react-native";
 
 export default class App extends Component {
+  /* state = {
+    posts: []
+  };
+ */
   onPresentLearnMore = () => {
     alert("Button pressed!");
   };
+
+  componentDidMount() {
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ posts: data });
+      });
+  }
+
   render() {
-    return (
-      <View
+    /*let postsList = this.state.posts.map(p => {
+       return (
+        <View style={{ paddingTop: 10 }}>
+          <Text>{p.title}</Text>
+          <Text>{p.body}</Text>
+        </View>
+      );
+    });
+ */
+    /*  return (
+      <ScrollView
         style={{
           flex: 1,
           flexDirection: "column"
         }}
       >
-        <Button
-          onPress={this.onPresentLearnMore}
-          title="Learn More"
-          color="#841584"
-        />
-        <View
-          style={{
-            marginTop: 20,
-            justifyContent: "center",
-            alignItems: "stretch",
-            width: 50,
-            height: 50,
-            backgroundColor: "powderblue"
-          }}
-        />
-        <View
-          style={{ flex: 1, width: 50, height: 50, backgroundColor: "skyblue" }}
-        />
-        <View
-          style={{
-            flex: 2,
-            width: 50,
-            height: 50,
-            backgroundColor: "steelblue"
-          }}
-        />
+        {postsList}
+      </ScrollView>
+    ); */
+    return (
+      <View style={{ flex: 1 }}>
+        <ImageBackground
+          source={"/react-native/assest.img1.jpg"}
+          style={{ width: "100%", height: "100%" }}
+        >
+          <Text>Inside</Text>
+          <View style={{ flex: 1, backgroundColor: "powderblue" }} />
+          <View style={{ flex: 2, backgroundColor: "skyblue" }} />
+          <View style={{ flex: 3, backgroundColor: "steelblue" }} />
+        </ImageBackground>
       </View>
     );
   }
