@@ -7,8 +7,10 @@
     "test": "jest"
   },
   "dependencies": {
+    "galio-framework": "^0.5.3",
     "react": "16.8.3",
-    "react-native": "0.59.9"
+    "react-native": "0.59.9",
+    "react-native-vector-icons": "^6.6.0"
   },
   "devDependencies": {
     "@babel/core": "7.4.5",

@@ -1,67 +1,92 @@
 import React, { Component } from "react";
+
+import { Button } from "galio-framework";
+
 import {
-  StyleSheet,
   View,
-  Button,
-  Text,
+  ImageBackground,
+  Image,
+  TextInput,
   ScrollView,
-  ImageBackground
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  TouchableHighlight,
+  StatusBar
 } from "react-native";
 
-export default class App extends Component {
-  /* state = {
-    posts: []
-  };
- */
-  onPresentLearnMore = () => {
-    alert("Button pressed!");
-  };
-
-  componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then(response => response.json())
-      .then(data => {
-        this.setState({ posts: data });
-      });
-  }
-
+class App extends Component {
   render() {
-    /*let postsList = this.state.posts.map(p => {
-       return (
-        <View style={{ paddingTop: 10 }}>
-          <Text>{p.title}</Text>
-          <Text>{p.body}</Text>
-        </View>
-      );
-    });
- */
-    /*  return (
-      <ScrollView
+    return (
+      <ImageBackground
+        source={require("./assest/img2.png")}
         style={{
+          width: "100%",
+          height: "100%",
           flex: 1,
-          flexDirection: "column"
+          flexDirection: "column",
+          alignItems: "center"
         }}
       >
-        {postsList}
-      </ScrollView>
-    ); */
-    return (
-      <View style={{ flex: 1 }}>
-        <ImageBackground
-          source={"/react-native/assest.img1.jpg"}
-          style={{ width: "100%", height: "100%" }}
-        >
-          <Text>Inside</Text>
-          <View style={{ flex: 1, backgroundColor: "powderblue" }} />
-          <View style={{ flex: 2, backgroundColor: "skyblue" }} />
-          <View style={{ flex: 3, backgroundColor: "steelblue" }} />
-        </ImageBackground>
-      </View>
+        <View style={styles.itemx}>
+          <View style={styles.container}>
+            <ImageBackground
+              style={{
+                width: 140,
+                height: 140,
+                marginTop: 0,
+                justifyContent: "center",
+                alignItems: "center"
+              }}
+              source={require("./assest/Rectangle7.png")}
+            />
+          </View>
+          <View style={styles.container}>
+            <ImageBackground
+              style={{
+                width: 140,
+                height: 140,
+                marginTop: 0,
+                justifyContent: "center",
+                alignItems: "center",
+                position: "relative"
+              }}
+              source={require("./assest/Rectangle5.png")}
+            />
+          </View>
+        </View>
+        <View style={styles.itemy}>
+          <View style={styles.container}>
+            <ImageBackground
+              style={{
+                width: 140,
+                height: 140,
+                marginTop: 0,
+                justifyContent: "center",
+                alignItems: "center",
+                position: "relative"
+              }}
+              source={require("./assest/Rectangle4.png")}
+            />
+          </View>
+          <View style={styles.container}>
+            <ImageBackground
+              style={{
+                width: 140,
+                height: 140,
+                marginTop: 0,
+                justifyContent: "center",
+                alignItems: "center",
+                position: "relative"
+              }}
+              source={require("./assest/Rectangle6.png")}
+            />
+          </View>
+        </View>
+      </ImageBackground>
     );
   }
 }
-
-const a = "rhshd";
 
 const styles = StyleSheet.create({
   welcome: {
@@ -69,13 +94,41 @@ const styles = StyleSheet.create({
     textAlign: "center",
     margin: 10
   },
-  instructions: {
-    textAlign: "center",
-    color: "#333333",
-    marginBottom: 5
-  },
+
   button: {
-    marginLeft: 150,
-    marginTop: 150
+    marginLeft: 90,
+    marginTop: 100,
+    alignItems: "center",
+    width: 140,
+    height: 140
+  },
+  container: {
+    flex: 1,
+    justifyContent: "space-around",
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "transparent"
+  },
+  itemx: {
+    width: "75%",
+    backgroundColor: "transparent",
+    justifyContent: "center",
+    alignItems: "center",
+    position: "absolute",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    top: "20%"
+  },
+  itemy: {
+    width: "75%",
+    backgroundColor: "transparent",
+    justifyContent: "center",
+    alignItems: "center",
+    position: "absolute",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    top: "45%"
   }
 });
+
+export default App;
