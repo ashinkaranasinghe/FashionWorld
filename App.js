@@ -16,6 +16,24 @@ import {
 } from "react-native";
 
 class App extends Component {
+  static navigationOptions = {
+    title: "Delivery Method ",
+    headerTintColor: "white",
+    headerRight: (
+      <Image
+        style={{
+          width: 40,
+          height: 40,
+          marginTop: 2,
+          marginRight: 8
+        }}
+        source={require("./assest/logoocopy.jpg")}
+      />
+    ),
+    headerStyle: {
+      backgroundColor: "#ff9800"
+    }
+  };
   render() {
     return (
       <ImageBackground
