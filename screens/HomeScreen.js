@@ -16,6 +16,17 @@ import {
 } from "react-native";
 
 class HomeScreen extends Component {
+  state = {};
+  static navigationOptions = {
+    title: "Fashion World",
+    headerStyle: {
+      backgroundColor: "#FFFFF"
+    },
+    headerTintColor: "#00000",
+    headerTitleStyle: {
+      fontWeight: "bold"
+    }
+  };
   navigateToNews = () => {
     this.props.navigation.navigate("News");
   };
