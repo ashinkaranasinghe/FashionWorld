@@ -53,10 +53,10 @@ class NewsScreen extends Component {
     //aniwaren jsx ekk return krnn oni
     let newslist = this.state.news.map(newsitem => {
       return (
-        <Card style={{ flex: 0 }}>
+        <Card style={{ flex: 0, marginLeft: 10, marginRight: 10 }}>
           <CardItem>
             <Left>
-              <Thumbnail source={{ uri: "img1.jpg" }} />
+              <Thumbnail source={{ url: newsitem.urlToImage }} />
               <Body>
                 <Text>{newsitem.title}</Text>
                 <Text note>April 15, 2016</Text>
@@ -66,7 +66,7 @@ class NewsScreen extends Component {
           <CardItem>
             <Body>
               <Image
-                source={{ uri: "img2.png" }}
+                source={{ uri: newsitem.urlToImage }}
                 style={{ height: 200, width: 200, flex: 1 }}
               />
               <Text>{newsitem.description}</Text>
