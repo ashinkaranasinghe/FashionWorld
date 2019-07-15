@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Image } from "react-native";
+import { View, Image, ScrollView } from "react-native";
 import {
   Container,
   Header,
@@ -28,7 +28,7 @@ class NewsScreen extends Component {
   //me function eken penwa neda return wenne news tibba array eka ow
   getNews() {
     return fetch(
-      "https://newsapi.org/v2/everything?q=fashion&from=2019-07-05&sortBy=publishedAt&apiKey=44ab47db8d854d81a43fbbebee19d016&pageSize=3"
+      "https://newsapi.org/v2/everything?q=fashion&from=2019-07-05&sortBy=publishedAt&apiKey=44ab47db8d854d81a43fbbebee19d016&pageSize=20"
     )
       .then(response => response.json())
       .then(responseinjson => {
@@ -53,12 +53,11 @@ class NewsScreen extends Component {
     //aniwaren jsx ekk return krnn oni
     let newslist = this.state.news.map(newsitem => {
       return (
-        <Card style={{ flex: 0, marginLeft: 10, marginRight: 10 }}>
+        <Card style={{ flex: 0, marginLeft: 12, marginRight: 12 }}>
           <CardItem>
             <Left>
               <Body>
                 <Text>{newsitem.title}</Text>
-                <Text note>April 15, 2016</Text>
               </Body>
             </Left>
           </CardItem>
@@ -66,23 +65,25 @@ class NewsScreen extends Component {
             <Body>
               <Image
                 source={{ uri: newsitem.urlToImage }}
-                style={{ height: 200, width: 200, flex: 1 }}
+                style={{ height: 200, width: 300 }}
               />
               <Text>{newsitem.description}</Text>
+
+              <Text note>{newsitem.author}</Text>
             </Body>
           </CardItem>
           <CardItem>
             <Left>
               <Button transparent textStyle={{ color: "#87838B" }}>
-                <Icon name="logo-github" />
-                <Text>1,926 stars</Text>
+                <Icon name="heart" style={{ color: "#ED4A6A" }} />
+                <Text>1 like</Text>
               </Button>
             </Left>
           </CardItem>
         </Card>
       );
     });
-    return <View>{newslist}</View>;
+    return <ScrollView>{newslist}</ScrollView>;
   }
 }
 
