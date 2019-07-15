@@ -28,6 +28,7 @@ const AppNavigator = createStackNavigator(
     Shopping: ShoppingScreen,
     News: NewsScreen,
     Promotion: PromotionScreen
+    
   },
   {
     initialRouteName: "Home"
