@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View } from "react-native";
+import { View, Image } from "react-native";
 import {
   Container,
   Header,
@@ -12,8 +12,7 @@ import {
   Icon,
   Left,
   Body,
-  Right,
-  Image
+  Right
 } from "native-base";
 class NewsScreen extends Component {
   state = {
@@ -57,7 +56,7 @@ class NewsScreen extends Component {
         <Card style={{ flex: 0 }}>
           <CardItem>
             <Left>
-              <Thumbnail source={{ uri: "Image URL" }} />
+              <Thumbnail source={{ uri: "img1.jpg" }} />
               <Body>
                 <Text>{newsitem.title}</Text>
                 <Text note>April 15, 2016</Text>
@@ -67,7 +66,7 @@ class NewsScreen extends Component {
           <CardItem>
             <Body>
               <Image
-                source={{ uri: "Image URL" }}
+                source={{ uri: "img2.png" }}
                 style={{ height: 200, width: 200, flex: 1 }}
               />
               <Text>{newsitem.description}</Text>
@@ -84,18 +83,7 @@ class NewsScreen extends Component {
         </Card>
       );
     });
-    return (
-      <View
-        style={{
-          flex: 1,
-          alignItems: "baseline",
-          paddingTop: 20,
-          justifyContent: "flex-start"
-        }}
-      >
-        {newslist}
-      </View>
-    );
+    return <View>{newslist}</View>;
   }
 }
 
