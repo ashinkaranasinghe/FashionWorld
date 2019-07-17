@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Image, ScrollView } from "react-native";
+import { View, Image, ScrollView, StyleSheet } from "react-native";
 import {
   Container,
   Spinner,
@@ -57,7 +57,7 @@ class tabone extends Component {
           <CardItem>
             <Left>
               <Body>
-                <Text>{newsitem.title}</Text>
+                <Text style={styles.title}>{newsitem.title}</Text>
               </Body>
             </Left>
           </CardItem>
@@ -67,7 +67,7 @@ class tabone extends Component {
                 source={{ uri: newsitem.urlToImage }}
                 style={{ height: 200, width: 300 }}
               />
-              <Text>{newsitem.description}</Text>
+              <Text style={{ paddingTop: 5 }}>{newsitem.description}</Text>
 
               <Text note>{newsitem.author}</Text>
             </Body>
@@ -86,5 +86,14 @@ class tabone extends Component {
     return <ScrollView>{newslist}</ScrollView>;
   }
 }
+const styles = StyleSheet.create({
+  title: {
+    fontSize: 20,
+
+    textAlign: "auto",
+
+    fontWeight: "bold"
+  }
+});
 
 export default tabone;
