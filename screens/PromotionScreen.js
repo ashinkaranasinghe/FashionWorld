@@ -23,10 +23,10 @@ class PromotionScreen extends Component {
   async componentDidMount() {
     let newsFromAPI = await this.getNews();
 
-    this.setState({ news: newsFromAPI });
+    this.setState({ Promotion: newsFromAPI });
   }
   getNews() {
-    "https://newsapi.org/v2/everything?q=fashion&from=2019-07-05&sortBy=publishedAt&apiKey=44ab47db8d854d81a43fbbebee19d016&pageSize=20"
+    "https://newsapi.org/v2/everything?q=promotion&from=2019-0-.05&sortBy=publishedAt&apiKey=44ab47db8d854d81a43fbbebee19d016&pageSize=20"
       .then(response => response.json())
       .then(responsejson => {
         return responsejson.articles;
@@ -47,7 +47,7 @@ class PromotionScreen extends Component {
   };
 
   render() {
-    let promotionitem = this.state.news.map(promotionitem => {
+    let promotionitem = this.state.Promotion.map(promotionitem => {
       return (
         <Card style={{ flex: 0, marginLeft: 12, marginRight: 12 }}>
           <CardItem>

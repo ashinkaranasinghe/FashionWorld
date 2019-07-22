@@ -1,5 +1,12 @@
 import React, { Component } from "react";
-import { View, Image, ScrollView, StyleSheet } from "react-native";
+import {
+  View,
+  Image,
+  ScrollView,
+  StyleSheet,
+  AsyncStorage,
+  TouchableOpacity
+} from "react-native";
 import {
   Container,
   Spinner,
@@ -28,7 +35,7 @@ class tabone extends Component {
   //me function eken penwa neda return wenne news tibba array eka ow
   getNews() {
     return fetch(
-      "https://newsapi.org/v2/everything?q=promotion&from=2019-07.05&sortBy=publishedAt&apiKey=44ab47db8d854d81a43fbbebee19d016&pageSize=20"
+      "https://newsapi.org/v2/everything?q=fashions&from=2019-0-.05&sortBy=publishedAt&apiKey=44ab47db8d854d81a43fbbebee19d016&pageSize=20"
     )
       .then(response => response.json())
       .then(responseinjson => {
@@ -38,6 +45,24 @@ class tabone extends Component {
         alert(error);
       });
   }
+  storeData = async () => {
+    try {
+      await AsyncStorage.setItem("@MySuperStore:key", "I like to save it.");
+    } catch (error) {
+      // Error saving data
+    }
+  };
+  retrieveData = async () => {
+    try {
+      const value = await AsyncStorage.getItem("TASKS");
+      if (value !== null) {
+        // We have data!!
+        console.log(value);
+      }
+    } catch (error) {
+      // Error retrieving data
+    }
+  };
 
   static navigationOptions = {
     title: "News",
@@ -49,6 +74,7 @@ class tabone extends Component {
       fontWeight: "bold"
     }
   };
+
   render() {
     //aniwaren jsx ekk return krnn oni
     let newslist = this.state.news.map(newsitem => {
@@ -76,7 +102,6 @@ class tabone extends Component {
             <Left>
               <Button transparent textStyle={{ color: "#87838B" }}>
                 <Icon name="heart" style={{ color: "#FFFFFF" }} />
-                <Text>1 like</Text>
               </Button>
             </Left>
           </CardItem>

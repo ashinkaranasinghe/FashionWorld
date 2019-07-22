@@ -8,7 +8,7 @@ class NewsScreen extends Component {
   render() {
     return (
       <Container>
-        <Tabs style={{backgroundColor="#FFFFFF"}}>
+        <Tabs style={{ backgroundColor: "#FFFFFF" }}>
           <Tab heading="News">
             <News />
           </Tab>
