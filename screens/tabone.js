@@ -75,7 +75,7 @@ class tabone extends Component {
           <CardItem>
             <Left>
               <Button transparent textStyle={{ color: "#87838B" }}>
-                <Icon name="heart" style={{ color: "#ED4A6A" }} />
+                <Icon name="heart" style={{ color: "#FFFFFF" }} />
                 <Text>1 like</Text>
               </Button>
             </Left>
