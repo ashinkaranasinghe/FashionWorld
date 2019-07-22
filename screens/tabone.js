@@ -28,7 +28,7 @@ class tabone extends Component {
   //me function eken penwa neda return wenne news tibba array eka ow
   getNews() {
     return fetch(
-      "https://newsapi.org/v2/everything?q=fashion&from=2019-07-05&sortBy=publishedAt&apiKey=44ab47db8d854d81a43fbbebee19d016&pageSize=20"
+      "https://newsapi.org/v2/everything?q=promotion&from=2019-07.05&sortBy=publishedAt&apiKey=44ab47db8d854d81a43fbbebee19d016&pageSize=20"
     )
       .then(response => response.json())
       .then(responseinjson => {
