@@ -4,9 +4,9 @@ import {
   Image,
   ScrollView,
   StyleSheet,
-  AsyncStorage,
   TouchableOpacity
 } from "react-native";
+import AsyncStorage from "@react-native-community/async-storage";
 import {
   Container,
   Spinner,
@@ -45,13 +45,27 @@ class tabone extends Component {
         alert(error);
       });
   }
-  storeData = async () => {
+  getData = async () => {
     try {
-      await AsyncStorage.setItem("@MySuperStore:key", "I like to save it.");
-    } catch (error) {
-      // Error saving data
+      const value = await AsyncStorage.getItem("favirote_key");
+      if (value !== null) {
+        // value previously stored
+      }
+    } catch (e) {
+      // error reading value
     }
   };
+
+  storeData = async () => {
+    try {
+      await AsyncStorage.setItem("favirote_key", "stored value");
+    } catch (e) {
+      // saving error
+    }
+  };
+  onFaviroteclick() {
+    alert("Clicked");
+  }
 
   static navigationOptions = {
     title: "News",
@@ -89,8 +103,13 @@ class tabone extends Component {
           </CardItem>
           <CardItem>
             <Left>
-              <Button transparent textStyle={{ color: "#87838B" }}>
+              <Button
+                onPress={this.onFaviroteclick}
+                transparent
+                textStyle={{ color: "#87838B" }}
+              >
                 <Icon name="heart" style={{ color: "#FFFFFF" }} />
+                <Text>1 like</Text>
               </Button>
             </Left>
           </CardItem>
