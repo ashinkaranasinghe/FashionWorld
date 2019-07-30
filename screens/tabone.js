@@ -65,6 +65,7 @@ class tabone extends Component {
   };
   onFaviroteclick() {
     alert("Clicked");
+    <Icon name="heart" style={{ color: "#ED4A6A", size: 20 }} />;
   }
 
   static navigationOptions = {
@@ -108,7 +109,7 @@ class tabone extends Component {
                 transparent
                 textStyle={{ color: "#87838B" }}
               >
-                <Icon name="heart" style={{ color: "#FFFFFF" }} />
+                <Icon name="heart" style={{ color: "#ED4A6A", size: 10 }} />
                 <Text>1 like</Text>
               </Button>
             </Left>
