@@ -71,7 +71,7 @@ class tabone extends Component {
   static navigationOptions = {
     title: "News",
     headerStyle: {
-      backgroundColor: "#CC0000"
+      backgroundColor: "#F1948A"
     },
     headerTintColor: "#fff",
     headerTitleStyle: {
@@ -110,7 +110,6 @@ class tabone extends Component {
                 textStyle={{ color: "#87838B" }}
               >
                 <Icon name="heart" style={{ color: "#ED4A6A", size: 10 }} />
-                <Text>1 like</Text>
               </Button>
             </Left>
           </CardItem>
