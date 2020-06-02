@@ -35,7 +35,7 @@ class tabone extends Component {
   //me function eken penwa neda return wenne news tibba array eka ow
   getNews() {
     return fetch(
-      "https://newsapi.org/v2/everything?q=fashions&from=2019-0-.05&sortBy=publishedAt&apiKey=44ab47db8d854d81a43fbbebee19d016&pageSize=20"
+      "https://newsapi.org/v2/everything?q=fashions&from=2019-5-.05&sortBy=publishedAt&apiKey=44ab47db8d854d81a43fbbebee19d016&pageSize=20"
     )
       .then(response => response.json())
       .then(responseinjson => {
@@ -73,7 +73,7 @@ class tabone extends Component {
     headerStyle: {
       backgroundColor: "#F1948A"
     },
-    headerTintColor: "#fff",
+    headerTintColor: "#ffff",
     headerTitleStyle: {
       fontWeight: "bold"
     }
